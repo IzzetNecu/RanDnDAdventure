@@ -15,7 +15,12 @@ const Location = (props) => {
 
     function getLocation() {
         const loc = getRandomLocation();
-        const location = <h2>{loc}</h2>
+        const location = (
+            <div>
+                <h2>{loc.type}</h2>
+                <p>{loc.weather} {loc.surrounding} {loc.animals}</p>
+            </div>
+        )
         setThisLocation(location);
 
         let tempEvents = []
@@ -35,9 +40,6 @@ const Location = (props) => {
             {thisLocation}
             {isLocationSet ?
                 <div>
-                    <div>
-                        <p className="description">Location Description...</p>
-                    </div>
                     <div className="eventList">
                         {events}
                     </div>
