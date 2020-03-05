@@ -7,6 +7,7 @@ const events = {
 
 const eventsBasic = ["Person", "Hostile Encounter", "Merchant", "Animal"];
 
+//return better event (what kind of person, encounter merchant...), rng description
 export function getRandomEvent() {
     const rng = Math.floor(Math.random() * eventsBasic.length);
     return eventsBasic[rng];

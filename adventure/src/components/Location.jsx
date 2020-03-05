@@ -9,14 +9,13 @@ const Location = (props) => {
     const [isLocationSet, setIsLocationSet] = useState(false);
     const [thisLocation, setThisLocation] = useState(
         <Button variant="contained" color="primary" onClick={getLocation}>
-            Get Location
+            Next Location
         </Button>);
     const [events, setEvents] = useState([]);
-    const [nextLocations, setNextLocations] = useState();
 
     function getLocation() {
         const loc = getRandomLocation();
-        const location = <div>{loc}</div>
+        const location = <h2>{loc}</h2>
         setThisLocation(location);
 
         let tempEvents = []
@@ -36,6 +35,9 @@ const Location = (props) => {
             {thisLocation}
             {isLocationSet ?
                 <div>
+                    <div>
+                        <p className="description">Location Description...</p>
+                    </div>
                     <div className="eventList">
                         {events}
                     </div>
@@ -45,6 +47,8 @@ const Location = (props) => {
         </div>
     )
 }
+
+
 
 
 export default Location;

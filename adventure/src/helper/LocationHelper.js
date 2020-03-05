@@ -12,6 +12,7 @@ const locations = {
 
 const locationsBasic = ["Mountain", "Beach", "Swamp", "Forest", "Tundra", "Desert", "Plains"];
 
+//return better location, with rng description
 export function getRandomLocation() {
     const rng = Math.floor(Math.random() * locationsBasic.length);
     return locationsBasic[rng];
