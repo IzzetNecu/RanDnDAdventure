@@ -14,7 +14,10 @@ const Event = () => {
 
     function getEvent() {
         const ev = getRandomEvent();
-        const event = <h3>{ev}</h3>
+        const event = <div>
+            <h3>{ev.type}</h3>
+            <p className="description">{ev.description}</p>
+        </div>
         setThisEvent(event);
         setIsEventSet(true);
     }
@@ -24,7 +27,6 @@ const Event = () => {
             {thisEvent}
             {isEventSet ?
                 <div>
-                    <p className="description">Event description...</p>
                     <TextField
                         label="Notes"
                         multiline

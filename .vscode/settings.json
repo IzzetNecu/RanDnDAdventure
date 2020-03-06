@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/cb48d449-9a25-48df-be8c-8b77bb4f0249/resourceGroups/TestTenant/providers/Microsoft.Web/sites/purpleMango",
+    "appService.deploySubpath": "adventure\\build"
+}
