@@ -13,7 +13,7 @@ function getWeather(locationType) {
     let weatherChances = locationStats[locationType].WeatherChances;
     const rng = Math.random();
     for (let i = 0; i < weatherChances.length; i++) {
-        if (weatherChances[i] > rng) {
+        if (weatherChances[i] >= rng) {
             return weather[i];
         }
 

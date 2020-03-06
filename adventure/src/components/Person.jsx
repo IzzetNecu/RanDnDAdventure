@@ -1,31 +1,31 @@
 import React from "react"
 import { useState } from "react";
 import Button from '@material-ui/core/Button';
-import { getRandomEvent } from '../helper/EventHelper'
+import { getRandomPerson } from '../helper/PersonHelper'
 import TextField from '@material-ui/core/TextField';
 
 
-const Event = () => {
-    const [isEventSet, setIsEventSet] = useState(false);
-    const [thisEvent, setThisEvent] = useState(
-        <Button variant="contained" color="primary" onClick={getEvent}>
-            Get Event
+const Person = () => {
+    const [isPersonSet, setIsPersonSet] = useState(false);
+    const [thisPerson, setThisPerson] = useState(
+        <Button variant="contained" color="primary" onClick={getPerson}>
+            Get Person
         </Button>);
 
-    function getEvent() {
-        const ev = getRandomEvent();
-        const event = <div>
+    function getPerson() {
+        const ev = getRandomPerson();
+        const person = <div>
             <h3>{ev.type}</h3>
             <p className="description">{ev.description}</p>
         </div>
-        setThisEvent(event);
-        setIsEventSet(true);
+        setThisPerson(person);
+        setIsPersonSet(true);
     }
 
     return (
-        <div className="event">
-            {thisEvent}
-            {isEventSet ?
+        <div className="person">
+            {thisPerson}
+            {isPersonSet ?
                 <div>
                     <TextField
                         label="Notes"
@@ -40,4 +40,4 @@ const Event = () => {
     )
 }
 
-export default Event;
+export default Person;

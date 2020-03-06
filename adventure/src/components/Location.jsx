@@ -1,9 +1,9 @@
 import React from "react"
 import { useState } from "react";
 import Button from '@material-ui/core/Button';
-import Event from './Event';
+import Person from './Person';
 import { getRandomLocation } from '../helper/LocationHelper'
-import { getRandomNumber } from '../helper/EventHelper'
+import { getRandomNumber } from '../helper/PersonHelper'
 
 const Location = (props) => {
     const [isLocationSet, setIsLocationSet] = useState(false);
@@ -11,7 +11,7 @@ const Location = (props) => {
         <Button variant="contained" color="primary" onClick={getLocation}>
             Next Location
         </Button>);
-    const [events, setEvents] = useState([]);
+    const [persons, setPersons] = useState([]);
 
     function getLocation() {
         const loc = getRandomLocation();
@@ -23,15 +23,15 @@ const Location = (props) => {
         )
         setThisLocation(location);
 
-        let tempEvents = []
-        let eventCount = getRandomNumber(3);
-        if (eventCount > 0) {
-            for (let i = 0; i < eventCount; i++) {
-                tempEvents.push(<Event></Event>)
+        let tempPersons = []
+        let personCount = getRandomNumber(3);
+        if (personCount > 0) {
+            for (let i = 0; i < personCount; i++) {
+                tempPersons.push(<Person></Person>)
             }
 
         }
-        setEvents(tempEvents);
+        setPersons(tempPersons);
         setIsLocationSet(true);
     }
 
@@ -40,8 +40,8 @@ const Location = (props) => {
             {thisLocation}
             {isLocationSet ?
                 <div>
-                    <div className="eventList">
-                        {events}
+                    <div className="personList">
+                        {persons}
                     </div>
                     <Location></Location>
                 </div>
