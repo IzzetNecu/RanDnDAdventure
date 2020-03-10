@@ -1,0 +1,2 @@
+Instead of making a fixed Event list, when arriving at a location,
+ there could be a walk further button, who either reveals a new location or a new event.

@@ -5,8 +5,13 @@
   background: red;
 }
 
+.toolDescription {
+  margin: 0px;
+  padding: 16px 50px;
+}
+
 .App{
-  padding: 60px;
+  padding: 16px 60px;
 }
 
 h2 {
